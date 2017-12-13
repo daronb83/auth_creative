@@ -1,5 +1,5 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var mongoose = require('mongoose'),
+    Schema = mongoose.Schema;
 
 var CharacterSchema = new Schema({
     name: String,
@@ -21,12 +21,4 @@ var CharacterSchema = new Schema({
     inventory: String
 });
 
-var UserSchema = new Schema({
-    username: { type: String, unique: true },
-    email: String,
-    hashed_password: String,
-    characters: [CharacterSchema]
-});
-
-mongoose.model('User', UserSchema);
 mongoose.model('Character', CharacterSchema);
