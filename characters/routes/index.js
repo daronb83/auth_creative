@@ -14,8 +14,8 @@ router.get('/', function(req, res){
       console.log("/ Route if user exists");
 
       res.render('index', {username: req.session.username,
-                           msg:req.session.msg,
-                           charactername:req.session.charactername,
+                           msg: req.session.msg,
+                           charactername: req.session.charactername,
                            class: req.session.class,
                            race: req.session.race,
                            background: req.session.background,

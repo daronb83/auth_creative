@@ -33,6 +33,7 @@ exports.signup = function(req, res){
 };
 
 exports.login = function(req, res){
+  console.log("in exports.login");
   User.findOne({ username: req.body.username })
 
   .exec(function(err, user) {
@@ -77,6 +78,8 @@ exports.login = function(req, res){
 };
 
 exports.getUserProfile = function(req, res) {
+  console.log("in exports.getUserProfile");
+
   User.findOne({ _id: req.session.user })
   .exec(function(err, user) {
     if (!user){
@@ -88,11 +91,25 @@ exports.getUserProfile = function(req, res) {
 };
 
 exports.updateUser = function(req, res){
+  console.log("in exports.updateUser");
   User.findOne({ _id: req.session.user })
 
   .exec(function(err, user) {
     user.set('email', req.body.email);
     user.set('character', req.body.character);
+    user.set('charactername', req.body.charactername);
+    user.set('class', req.body.class);
+    user.set('race', req.body.race);
+    user.set('background', req.body.background);
+    user.set('img', req.body.img);
+    user.set('str', req.body.str);
+    user.set('agi', req.body.agi);
+    user.set('con', req.body.con);
+    user.set('int', req.body.int);
+    user.set('wis', req.body.wis);
+    user.set('cha', req.body.cha);
+    user.set('backstory', req.body.backstory);
+
     user.save(function(err) {
 
       if (err){
@@ -108,6 +125,8 @@ exports.updateUser = function(req, res){
 };
 
 exports.deleteUser = function(req, res){
+  console.log("in exports.deleteUser");
+
   User.findOne({ _id: req.session.user })
 
   .exec(function(err, user) {
