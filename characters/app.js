@@ -8,7 +8,7 @@ var expressSession = require('express-session');
 var mongoStore = require('connect-mongo')({session: expressSession});
 var mongoose = require('mongoose');
 require('./models/users_model.js');
-var conn = mongoose.connect('mongodb://localhost/characterApp', { useMongoClient: true });
+var conn = mongoose.connect('mongodb://localhost/character', { useMongoClient: true });
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
