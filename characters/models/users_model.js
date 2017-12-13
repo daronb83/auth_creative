@@ -18,11 +18,11 @@ var CharacterSchema = new Schema({
 
 mongoose.model('Character', CharacterSchema);
 
-var UserSchema = new Schema({
+var PersonSchema = new Schema({
     username: { type: String, unique: true },
     email: String,
     hashed_password: String,
     character: CharacterSchema
 });
 
-mongoose.model('User', UserSchema);
+mongoose.model('User', PersonSchema);
