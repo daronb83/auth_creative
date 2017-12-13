@@ -48,7 +48,7 @@ exports.login = function(req, res){
         req.session.user = user.id;
         req.session.username = user.username;
         req.session.msg = 'Authenticated as ' + user.username;
-        req.session.character = user.character;
+        req.session.charactername = user.charactername;
         res.redirect('/');
       });
     }

@@ -15,7 +15,8 @@ router.get('/', function(req, res){
 
       res.render('index', {username: req.session.username,
                            msg:req.session.msg,
-                           character:req.session.character});
+                           charactername:req.session.charactername
+                           });
     }
     else {
       console.log("/ Route else user");
