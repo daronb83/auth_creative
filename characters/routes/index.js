@@ -11,7 +11,7 @@ router.get('/', function(req, res){
     console.log(req.session);
 
     if (req.session.user) {
-      console.log("/ Route if user");
+      console.log("/ Route if user exists");
 
       res.render('index', {username: req.session.username,
                            msg:req.session.msg,
