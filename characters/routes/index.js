@@ -15,7 +15,18 @@ router.get('/', function(req, res){
 
       res.render('index', {username: req.session.username,
                            msg:req.session.msg,
-                           charactername:req.session.charactername
+                           charactername:req.session.charactername,
+                           class: req.session.class,
+                           race: req.session.race,
+                           background: req.session.background,
+                           img: req.session.img,
+                           str: req.session.str,
+                           agi: req.session.agi,
+                           con: req.session.con,
+                           int: req.session.int,
+                           wis: req.session.wis,
+                           cha: req.session.cha,
+                           backstory: req.session.backstory
                            });
     }
     else {

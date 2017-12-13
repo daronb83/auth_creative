@@ -49,6 +49,17 @@ exports.login = function(req, res){
         req.session.username = user.username;
         req.session.msg = 'Authenticated as ' + user.username;
         req.session.charactername = user.charactername;
+        req.session.class = user.class,
+        req.session.race = user.race,
+        req.session.background = user.background,
+        req.session.img = user.img,
+        req.session.str = user.str,
+        req.session.agi = user.agi,
+        req.session.con = user.con,
+        req.session.int = user.int,
+        req.session.wis = user.wis,
+        req.session.cha = user.cha,
+        req.session.backstory = user.backstory
         res.redirect('/');
       });
     }
