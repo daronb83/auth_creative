@@ -8,7 +8,7 @@
 
 <body>
     <div class="form-container" ng-controller="myController">
-        <p id="sectionTitle" class="form-header">User Profile</p>
+        <h1 id="sectionTitle" class="form-header">User Profile</h1>
         <form method="POST" action="/user/update">
             <label>Username:</label>
             <input type="text" id="username" name="username" ng-model="user.username" disabled><br>
@@ -41,7 +41,7 @@
             <label>Charisma:</label>
             <input type="number" id="cha" name="cha" ng-model="user.cha"><br>
             <label>Backstory:</label>
-            <textarea id="backstory" name="backstory" ng-model="user.backstory"><br>
+            <textarea id="backstory" name="backstory" ng-model="user.backstory"></textarea<br>
             <input type="submit" id="save" value="Save">
         </form>
     </div>
