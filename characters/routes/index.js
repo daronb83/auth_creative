@@ -15,8 +15,8 @@ router.get('/', function(req, res){
 
       res.render('index', {username: req.session.username,
                            msg:req.session.msg,
-                           color:req.session.color});
-    } 
+                           character:req.session.character});
+    }
     else {
       console.log("/ Route else user");
       req.session.msg = 'Access denied!';

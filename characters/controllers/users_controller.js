@@ -39,7 +39,7 @@ exports.login = function(req, res){
 
     if (!user){
       err = 'User Not Found.';
-    } 
+    }
     else if (user.hashed_password === hashPW(req.body.password.toString())) {
 
       req.session.regenerate(function(){
@@ -48,7 +48,7 @@ exports.login = function(req, res){
         req.session.user = user.id;
         req.session.username = user.username;
         req.session.msg = 'Authenticated as ' + user.username;
-        req.session.color = user.color;
+        req.session.character = user.character;
         res.redirect('/');
       });
     }
@@ -81,15 +81,15 @@ exports.updateUser = function(req, res){
 
   .exec(function(err, user) {
     user.set('email', req.body.email);
-    user.set('color', req.body.color);
+    user.set('character', req.body.character);
     user.save(function(err) {
 
       if (err){
         res.sessor.error = err;
-      } 
+      }
       else {
         req.session.msg = 'User Updated.';
-        req.session.color = req.body.color;
+        req.session.character = req.body.character;
       }
       res.redirect('/user');
     });
@@ -111,10 +111,10 @@ exports.deleteUser = function(req, res){
           res.redirect('/login');
         });
       });
-    } 
+    }
     else{
       req.session.msg = "User Not Found!";
-      
+
 	req.session.destroy(function(){
         res.redirect('/login');
       });
