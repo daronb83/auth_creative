@@ -5,7 +5,7 @@ var PersonSchema = new Schema({
     username: { type: String, unique: true },
     email: String,
     hashed_password: String,
-    name: String,
+    charactername: String,
     class: String,
     race: String,
     background: String,
